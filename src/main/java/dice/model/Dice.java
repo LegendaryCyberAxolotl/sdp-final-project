@@ -6,4 +6,5 @@ public interface Dice {
     int accept(DiceVisitor visitor);
     int getMaxValue();
     String getName();
+    int getMidValue();
 }

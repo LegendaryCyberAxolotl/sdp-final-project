@@ -27,9 +27,21 @@ import dnd.model.Character;
 import gear.Weapon;
 
 public class CharacterBuilder {
+    private String name;
     private Race race;
     private CharacterClass characterClass;
     private Weapon weapon;
+    private int hp;
+
+    public CharacterBuilder setHp(int hp) {
+        this.hp = hp;
+        return this;
+    }
+
+    public CharacterBuilder setName(String name) {
+        this.name = name;
+        return this;
+    }
 
     public CharacterBuilder addRace(Race race) {
         this.race = race;
@@ -95,7 +107,7 @@ public class CharacterBuilder {
     }
 
     public Character build() {
-        Character character = new Character(race, characterClass);
+        Character character = new Character(name, race, characterClass, hp);
         if (weapon != null) {
             character.setWeapon(weapon);
         }
