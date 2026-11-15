@@ -8,7 +8,7 @@ import dice.visitor.*;
 public class Attack implements ActionStrategy {
     @Override
     public void act(Character character) {
-        Weapon weapon = Weapon.weapon1;
+        Weapon weapon = character.getWeapon();
         DiceRoller roller = new DiceRoller();
 
         WeaponDamage damage = weapon.getDamage();
