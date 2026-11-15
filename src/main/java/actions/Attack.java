@@ -1,11 +1,23 @@
 package actions;
 
 import dnd.model.Character;
+import gear.*;
+import dice.model.*;
+import dice.visitor.*;
 
 public class Attack implements ActionStrategy {
     @Override
     public void act(Character character) {
-        // Implementation of the attack action
+        Weapon weapon = Weapon.weapon1;
+        DiceRoller roller = new DiceRoller();
+
+        WeaponDamage damage = weapon.getDamage();
+
+        System.out.println("Attacking with weapon");
+        int roll = damage.dice().accept(roller);
+
+        System.out.println("Result: " + roll);
+
     }
 
 }
