@@ -18,4 +18,9 @@ public abstract class AbstractDice implements Dice {
     public String getName() {
         return name;
     }
+
+    @Override
+    public int getMidValue() {
+        return (int) (maxValue + 1) / 2;
+    }
 }

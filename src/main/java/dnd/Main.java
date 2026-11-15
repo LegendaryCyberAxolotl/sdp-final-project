@@ -18,7 +18,8 @@ public class Main {
             Race race = app.createRace(options.race());
             CharacterClass baseClass = app.createClass(options.characterClass());
             CharacterClass decoratedClass = app.decorate(options.subclass(), baseClass);
-            Character character = new Character(race, decoratedClass);
+            Character character = new Character("Hero", race, decoratedClass,
+                    decoratedClass.getHpDice().getMidValue() * race.getHpModifier());
             character.showInfo();
         } catch (Exception ex) {
             System.err.println("Error: " + ex.getMessage());

@@ -1,6 +1,7 @@
 package dnd.decorator;
 
 import dnd.bridge.CharacterClass;
+import dice.model.Dice;
 
 public abstract class SubclassDecorator extends CharacterClass {
     protected final CharacterClass wrappedClass;
@@ -13,6 +14,7 @@ public abstract class SubclassDecorator extends CharacterClass {
     }
 
     @Override public String getName() { return wrappedClass.getName(); }
+    @Override public Dice getHpDice() { return wrappedClass.getHpDice(); }
     @Override public String getDescription() { return getSubclassDescription(); }
     protected abstract String getSubclassDescription();
 }
