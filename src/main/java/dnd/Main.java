@@ -10,9 +10,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Path jsonPath = args.length > 0 ? Path.of(args[0]) : Path.of("character.json");
+
         try (Scanner scanner = new Scanner(System.in)) {
-            CharacterOptions options = new CharacterOptionsSelector().selectOptions(jsonPath, scanner);
+            CharacterOptions options = new CharacterOptionsSelector().selectOptions(scanner);
             CharacterOptionsValidator.validate(options);
             Main app = new Main();
             Race race = app.createRace(options.race());
